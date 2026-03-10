@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us - Doctors Avenue</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel ="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+{% for run in post %}
+<header>
+
+ 
+
+	
+	<h1>{{run.title}}</h1>
+	{% endfor %}
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+	
+</header>
+
+
+<section class="contacts-hero">
+    <h1>contact us</h1>
+	{% for run in post %}
+	<p>{{run.contact}}</p>
+	
+    <p>{{run.content}}</p>
+	{% endfor %}
+</section>
+
+<div class="containerz">
+
+    <div class="contact-info">
+        <h3>Get In Touch</h3>
+		{% for run in post %}
+        <p><strong>Address:</strong> {{run.location}}</p>
+        <p><strong>Phone:</strong> {{run.contact}}</p>
+        <p><strong>Email:</strong> {{run.emails}}</p>
+        <p><strong>Working Hours:</strong> {{run.hours}}</p>
+		{% endfor %}
+		</div>
+			
+
+
+		<div class="contact-form">
+			<h3>Send Us a Message</h3>
+		
+			<form method ="POST">
+			{% csrf_token %}
+			<input type="text"name="name"placeholder="Full Name"required>
+			<input type="email"name="email"placeholder="Email Address"required>
+			<button type="submit">Send Message</button>
+			</form>
+		</div>
+</div>
+
+
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.03036320139!2d32.5825!3d0.3476" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<footer>
+    © 2026 Doctors Avenue | All Rights Reserved
+</footer>
+
+</body>
+</html>

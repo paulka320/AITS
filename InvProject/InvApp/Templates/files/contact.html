@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset ="utf-8">
+<title>Contact us</title>
+<body>
+		<form  action ="{% url 'files/welcome.html' %}"method ="GET">
+			<input type="text"name="name"placeholder="Full Name"required>
+			<input type="email"name="email"placeholder="Email Address"required>
+			<button type="submit">Send Message</button>
+			</form>
+</body>
+</html>

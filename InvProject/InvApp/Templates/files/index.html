@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors Avenue | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet"href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+{% for item in post %}
+<!-- HEADER -->
+<header>
+    
+	<h1>{{item.title}}</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>Your Health Is Our Priority</h2>
+    <p>Professional medical services with compassionate care in Uganda.</p>
+    <button class="btn">Book Appointment</button>
+    <button class="btn">Learn More ></button>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <h3>Our Medical Services</h3>
+
+    <div class="service-grid">
+        <div class="service-card">
+            <h4>General Consultation</h4>
+            <p>Expert diagnosis and personalized treatment plans.</p>
+        </div>
+
+        <div class="service-card">
+            <h4>Emergency Care</h4>
+            <p>24/7 emergency response with skilled professionals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>{{item.title}}</h4>
+            <p>{{item.content}}</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>{{item.info}}</h4>
+            <p>Email:{{item.email}}</p>
+            <p>Phone:{{item.contact}}</p>
+            <p>Location:{{item.location}}</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 Doctors Avenue. All Rights Reserved.
+    </div>
+</footer>
+{% endfor %}
+</body>
+</html>
